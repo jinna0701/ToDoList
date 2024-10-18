@@ -4,9 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>
-        CPRG 303 To Do List
-      </Text>
+      <Text>CPRG 303 To Do List </Text>
+      <Text>This is awesome app!</Text>
       <StatusBar style="auto" />
     </View>
   );
