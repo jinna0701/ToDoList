@@ -1,6 +1,4 @@
  
-
- 
 "use client";
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
@@ -54,7 +52,3 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-
-
-//parent component we can change property
-//in the child component we cannot change property 
