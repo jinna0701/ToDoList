@@ -4,6 +4,12 @@ import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
 import ToDoList from './ToDoList';
 import ToDoForm from './ToDoForm';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './src/screens/HomeScreen';
+import AboutScreen from './src/screens/AboutScreen';
+
+
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -12,12 +18,23 @@ function App() {
     { id: '3', text: 'Walk dog' },
   ]);
 
+  const Stack = createStackNavigator();
+
+
   return (
     <SafeAreaView style={styles.container}>
+      <NavigationContainer> 
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+
       <View style={styles.taskContainer}>
         <ToDoList tasks={tasks} />
         <ToDoForm addTask={(newTask) => setTask([...tasks, newTask])} />
       </View>
+
+      </NavigationContainer>
     </SafeAreaView>
   );
 }
